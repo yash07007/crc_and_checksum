@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// Utility function for doing XOR between teo equal length bit strings.
 string XOR(string a, string b) {
 
     string result = "";
@@ -32,9 +33,10 @@ string XOR(string a, string b) {
     return result;
 }
 
+// Function to perform a mudulo 2 divide, given two divident (data bits) and divisor (generator bits) bit strings.
 string divideMod2(string data, string generator = "1100000001111") {
     
-    string remiander, quotient;
+    string remiander;
 
     // Appending data with (genrator length - 1) zeros. 
     string appended_data = (data + string(generator.length() - 1, '0'));
@@ -84,7 +86,7 @@ string divideMod2(string data, string generator = "1100000001111") {
 int main() {
 
     ifstream myfile;
-    string data_bits;
+    string codeword;
     // CRC_12 Generator
     string generator = "1100000001111";
     
@@ -92,17 +94,16 @@ int main() {
 
     if (myfile.is_open()) {
 
-        while ( getline(myfile,data_bits) )
+        // Read data bits from the file line by line
+        while ( getline(myfile,codeword) )
         {
 
             string crc, codeword;
 
-            // Test Code
-            // cout << data_bits << '\n';
-            // data_bits = "100100";
-            // generator = "1101";
-
-            crc = divideMod2(data_bits, generator);
+            // Divide codeword by generator and check if remainder is 0.
+            // If not than there must be some error (not pass)
+            // Otherwise pass.
+            crc = divideMod2(codeword, generator);
             
             string result = "pass";
 
@@ -114,6 +115,7 @@ int main() {
                 }
             }
 
+            // Print result.
             cout << result << "\n";
             
         }
