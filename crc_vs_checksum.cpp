@@ -143,7 +143,8 @@ string checksum(string data) {
 
     while(R > 255) {
         // Q = (Q + R) / 256;
-        R = (Q + R) % 256;
+        // R = (Q + R) % 256;
+        R = R % 256;
     }
 
     // Take one's complement of clipped remainder.
