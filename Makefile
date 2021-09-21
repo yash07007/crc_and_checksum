@@ -6,9 +6,9 @@ compile:
 	g++ -o crc_tx crc_vs_checksum.cpp
 	
 run:
-	./crc_tx.cpp
-	./crc_rx.cpp
-	./crc_vs_checksum.cpp
+	./crc_tx
+	./crc_rx
+	./crc_vs_checksum
 
 clean:
 	rm crc_tx
