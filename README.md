@@ -6,8 +6,6 @@ This repository is made for EE450 Introduction to Computer Networks at Universit
 
 ## Project Details
 
----
-
 **Author:** Yash Solanki
 
 **Student Id:** 4369335504
