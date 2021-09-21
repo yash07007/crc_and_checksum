@@ -98,7 +98,7 @@ int main() {
         while ( getline(myfile,codeword) )
         {
 
-            string crc, codeword;
+            string crc;
 
             // Divide codeword by generator and check if remainder is 0.
             // If not than there must be some error (not pass)
