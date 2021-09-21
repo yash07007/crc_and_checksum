@@ -1,17 +1,16 @@
-# the compiler: gcc for C program, define as g++ for C++
-CC = g++
+all: compile run
 
-# compiler flags:
-#  -g    adds debugging information to the executable file
-#  -Wall turns on most, but not all, compiler warnings
-CFLAGS  = 
+compile: 
+	g++ -o crc_tx crc_tx.cpp
+	g++ -o crc_tx crc_rx.cpp
+	g++ -o crc_tx crc_vs_checksum.cpp
+	
+run:
+	./crc_tx.cpp
+	./crc_rx.cpp
+	./crc_vs_checksum.cpp
 
-# the build target executable:
-TARGET = crc_tx
-
-all: $(TARGET)
-
-$(TARGET): $(TARGET).cpp
-	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).cpp
-	./$(TARGET)
-	$(RM) $(TARGET)
+clean:
+	rm crc_tx
+	rm crc_rx
+	rm crc_vs_checksum
