@@ -2,3 +2,7 @@ data*
 ee*
 EE*
 .vscode
+a.exe
+crc_rx
+crc_tx
+crc_vs_checksum
