@@ -137,18 +137,17 @@ string checksum(string data) {
         sum += d;
     }
 
-    // Clip remainder to 0-255.
-    // Q = sum / 255;
-    R = sum % 255;
+    // Clip remainder to 0-256.
+    Q = sum / 256;
+    R = sum % 256;
 
     while(R > 255) {
-        // Q = (Q + R) / 256;
-        // R = (Q + R) % 256;
-        R = R % 256;
+        Q = (Q + R) / 256;
+        R = (Q + R) % 256;
     }
 
     // Take one's complement of clipped remainder.
-    checksum = 255 - R;
+    checksum = 255 - (Q+R);
 
     // Convert int back to binary string form and return.
     return intToBin(checksum);
