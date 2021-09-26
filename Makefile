@@ -11,6 +11,11 @@ run:
 	./crc_vs_checksum
 
 clean:
-	rm crc_tx
-	rm crc_rx
-	rm crc_vs_checksum
+	rm -f crc_tx
+	rm -f crc_rx
+	rm -f crc_vs_checksum
+	rm -f ee*
+
+build: clean
+	tar cvf ee450_PA1_ysolanki.tar crc* Make* README*
+	gzip ee450_PA1_ysolanki.tar
