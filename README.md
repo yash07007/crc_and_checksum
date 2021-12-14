@@ -1,14 +1,12 @@
 # CRC-and-Checksum
 
-This repository is made for EE450 Introduction to Computer Networks at University of Southern California's Viterbi School of Engineering. It has C++ implementation of CRC (Cyclic Redundancy Check) and Checksum.
+This repository has C++ implementation of CRC (Cyclic Redundancy Check) and Checksum.
 
 <br/>
 
 ## Project Details
 
 **Author:** Yash Solanki
-
-**Student Id:** 4369335504
 
 **Project Description:** This project implements CRC (Cyclic Redenduncy Check) Algorithm and 1 Byte Checksum Algorithm. It compares how both the algorithms performs with different errors. Description of structure of files is as follows
 
@@ -21,7 +19,3 @@ This repository is made for EE450 Introduction to Computer Networks at Universit
     - `make run` : Run all files.
     - `make clean` : Delete all executeables.  
 <br/>
-
-_This project is tested with all given testcases and it does not contian any idiosyncrasy._
-
-_This code is 100% developed by the mentioned authour and no part of source is referenced/copied from other source._
